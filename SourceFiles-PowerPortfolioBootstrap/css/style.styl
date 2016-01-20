@@ -1,0 +1,197 @@
+@import 'main.css'
+@import url(http://fonts.googleapis.com/css?family=Source\+Sans\+Pro:400,600,700)
+@import url(http://fonts.googleapis.com/css?family=Abril\+Fatface)
+
+_c1 = #4e9af3
+_c2 = darken(#5ef64f, 30%)
+_c3 = #ffb552
+_c4 = whitesmoke
+_c5 = #111
+_c6 = whitesmoke
+
+$transition
+  transition: all 200ms ease
+
+html
+  padding: 2rem
+  background: currentcolor url(../img/abstract-bg.svg) right bottom no-repeat
+  height: 100%
+  background-attachment: fixed
+  overflow-y: scroll
+
+body
+  background: none
+  font-family: 'Source Sans Pro', sans-serif
+  line-height: 1.5
+  color: _c6
+
+h1, h2, h3
+  font-family: 'Abril Fatface', cursive
+  color: white
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+
+p
+  margin-bottom: 1rem
+
+.navbar
+  .navbar-brand, .navbar-nav > li > a
+    color: _c6
+    font-weight: bold
+    @extend $transition
+    &:hover
+      color: _c1
+      background: none
+
+.navbar-toggle
+  background: _c5
+  .icon-bar
+    background: _c4
+
+.navbar-nav
+  > li
+    > a
+      @media (max-width: 768px)
+        background: _c5
+        border-radius: 4px
+        margin-bottom: 3px
+      &:after
+        content: '/'
+        margin-left: 30px
+        color: _c6
+        @media (max-width: 768px)
+          content: ''
+    &:last-child
+      > a
+        &:after
+          content: ''
+
+.container-fluid
+  .jumbotron
+    padding-left: 0
+    padding-right: 0
+
+.jumbotron
+  background: none
+  margin-top: 75px
+  margin-bottom: 75px
+  h1
+    font-size: 120px
+    @media (max-width: 992px)
+      font-size: 72px
+    @media (max-width: 768px)
+      font-size: 40px
+  .lead
+    font-size: 32px
+    @media (max-width: 768px)
+      font-size: 20px
+
+.portfolio-title
+  padding: 10px 15px
+  padding-left: 0
+  font-weight: bold
+
+.filterable-portfolio
+  margin-bottom: 3rem
+  .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus
+      background: _c5
+      color: _c4
+  .nav-pills
+    margin-bottom: 1rem
+    a
+      color: _c4
+      @extend $transition
+      &:hover
+        background: none
+        color: _c1
+
+.portfolio-item
+  margin-bottom: 1rem
+  &:hover
+    img
+      box-shadow: 0 0 0 5px rgba(black, 5%)
+      filter: grayscale(50%)
+  img
+    border-radius: 4px
+    filter: grayscale(100%)
+    @extend $transition
+
+.posts
+  margin-bottom: 3rem
+  .post
+    margin-bottom: 1rem
+    &:hover
+      img
+        filter: grayscale(50%)
+    img
+      border-radius: 4px
+      filter: grayscale(100%)
+      @extend $transition
+      margin-bottom: 1rem
+      &:hover
+        box-shadow: 0 0 0 5px rgba(black, 5%)
+  .post-excerpt
+    header
+      h3
+        margin-bottom: .25rem
+      a
+        color: _c4
+        &:hover
+          text-decoration: none
+    .post-meta
+      color: mix(_c4, _c5)
+      a
+        color: mix(_c4, _c5)
+        border-bottom: 1px dotted _c5
+        @extend $transition
+        &:hover
+          color: lighten(mix(_c4, _c5), 50%)
+          border-bottom: 0
+.sidebar
+  margin-bottom: 1rem
+  ul
+    padding: 0
+    list-style: none
+  li
+    margin-bottom: .5rem
+    a
+      color: darken(mix(_c4, _c5), 20%)
+      &:hover
+        text-decoration: none
+        border-bottom: 1px dotted mix(_c4, _c5)
+  .widget
+    margin-bottom: 3rem
+
+.contact-form
+  background: _c5
+  padding-top: 1em
+  padding-bottom: 1em
+  border-radius: 4px
+  margin-bottom: 3rem
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus
+  background: _c5
+  color: _c4
+
+a
+  color: _c1
+
+.recent-projects
+  li
+    margin-bottom: 1rem
+  img
+    border-radius: 4px
+    filter: grayscale(100%)
+    @extend $transition
+    &:hover
+      filter: grayscale(50%)
+      box-shadow: 0 0 0 5px rgba(black, 5%)
+
+.site-footer
+  margin-bottom: 3rem
+  span
+    margin-right: .5em
+
+// *
+//   background: rgba(blue, 5%)
